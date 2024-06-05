@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toys R Us</title>
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+</head>
+<div class="logo">
+    <img src="images/ToysRUsLogo.png">
+</div>
+<header>
+    <ul class="navigation">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</header>
+<body>
+    <div class="container">
+        <div id="aside">
+            <a href="#" data-image="images/small/Toys1.jpg" data-zoom-image="images/large/Toys1.jpg">
+                <img class="zoomable_images" src="images/thumb/Toys1.jpg"/>
+            </a>
+        
+            <a href="#" data-image="images/small/Toys2.jpg" data-zoom-image="images/large/Toys2.jpg">
+                <img class="zoomable_images" src="images/thumb/Toys2.jpg"/>
+            </a>
+        
+            <a href="#" data-image="images/small/Toys3.jpg" data-zoom-image="images/large/Toys3.jpg">
+                <img class="zoomable_images" src="images/thumb/Toys3.jpg"/>
+            </a>
+        
+            <a href="#" data-image="images/small/Toys4.jpg" data-zoom-image="images/large/Toys4.jpg">
+                <img class="zoomable_images" src="images/thumb/Toys4.jpg"/>
+            </a>
+            <a href="#" data-image="images/small/Toys5.jpg" data-zoom-image="images/large/Toys5.jpg">
+                <img class="zoomable_images" src="images/thumb/Toys5.jpg"/>
+            </a>
+        </div>
+        <img id="main-image" src="images/small/Toys5.jpg" data-zoom-image="images/large/Toys5.jpg">
+        <!--Links to jquery hosted on google and the elevatezoom library in our js folder-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	    <script src='js/elevatezoom.js'></script>
+        <script>
+        //Make the zoom happen for the larger image.
+        $("#main-image").elevateZoom({zoomType: 'inner',gallery:'aside', cursor: 'pointer', galleryActiveClass: 'active', imageCrossfade: true, loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'});
+        //Make the smaller images replace the larger image when clicked.
+        $("#main-image").bind("click", function(e) { 
+        var ez = $('.zoomable_images').data('elevateZoom');	
+        $.fancybox(ez.getGalleryList()); 
+        return false; 
+        });
+        </script>
+        <div class="bonus">
+            <div class="tabs">
+                <div class="tab">
+                <input type="radio" id="tab-1" name="tab-group-1" checked>
+                <label for="tab-1">Name</label>
+                <div class="content">
+                    <p>Price: $21.59</p>
+                    <p>Teenage Mutant Ninja Turtles 6-Piece-Teenage Mutant Ninja Turtles Action Figure-TMNT Action Doll-Mutants, Leonardo, Raphael, Michelangelo, Donatello</p>
+                </div>
+                </div>
+                <div class="tab">
+                <input type="radio" id="tab-2" name="tab-group-1">
+                <label for="tab-2">About</label>
+                <div class="content">
+                    <li>Size: Approx 4.72'' inches （12cm ）</li>
+                    <li>Character：TMNT Action Figures - Michelangelo Leonardo Raphael Donatello Splinter Shredder</li>
+                    <li>Great Minifigures Gifts for kids boys girls, Party, Birthday Gift, Christmas Gifts. Great Xmas Gift for Kids and Fans!</li>
+                    <li>Gender: Boys & Girls. Each Figure Comes with Weapon</li>
+                    <li>Material: High Quality PVC packed in OPP bags. Recommended Age Range: 3+</li>
+                </div>
+                </div>
+                <div class="tab">
+                <input type="radio" id="tab-3" name="tab-group-1">
+                <label for="tab-3">Product Description</label>
+                <div class="content">
+                    <p>Really restore the Teenage Mutant Ninja Turtles character model, each character has a fixed weapon, bringing you a new experience, the joints can swing, and truly restore the Teenage Mutant Ninja Turtles character model, each character has a fixed weapon, bringing you a new experience!It would be fun to make gifts for children</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="navbar">
+        <img class="related-products" src="images/Toys6.jpg" alt="Toys6">
+        <img class="related-products" src="images/Toys7.jpg" alt="Toys7">
+        <img class="related-products" src="images/Toys8.jpg" alt="Toys8">
+        <img class="related-products" src="images/Toys9.jpg" alt="Toys9">
+        <img class="related-products" src="images/Toys10.jpg" alt="Toys10">
+    </div>
+</footer>
+</html>
